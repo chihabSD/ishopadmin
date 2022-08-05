@@ -1,29 +1,101 @@
 import React from "react";
-import { LineStyle, Analytics, Timeline, TrendingUp } from "@mui/icons-material";
-import "./sidebar.css";
+import "./style.scss";
+import {
+  LineStyle,
+  Analytics,
+  Timeline,
+  NotificationsNone,
+  TrendingUp,
+  PersonOutline,
+  StoreMallDirectory,
+  Dashboard,
+  CreditCard,
+  LocalShipping,
+  SettingsApplications,
+  InsertChart,
+  SettingsSystemDaydreamOutlined,
+  AccountCircleOutlined,
+  PsychologyOutlined,
+  ExitToApp,
+} from "@mui/icons-material";
+
 const SideBar = () => {
   return (
     <div className="sidebar">
-      <div className="sidebarWrapper">
-        <div className="sidebarmenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <LineStyle className="sidebarIcon" />
-              Home
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon"/>
-              Analytics
-            </li>
-          
-            <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon"/>
-              Sales
-            </li>
-          </ul>
-        </div>
-        
+      <div className="top">
+        {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+
+        <span className="logo">ISHOP-ADMIN</span>
+        {/* </Link> */}
+      </div>
+      <hr />
+      <div className="center">
+        <ul>
+          <p className="title">MAIN</p>
+          <li>
+            <Dashboard className="icon" />
+            <span>Dashboard</span>
+          </li>
+          <p className="title">LISTS</p>
+
+          <li>
+            <PersonOutline className="icon" />
+            <span>Users</span>
+          </li>
+          <li>
+            <StoreMallDirectory className="icon" />
+            <span>Products</span>
+          </li>
+          <li>
+            <CreditCard className="icon" />
+            <span>Orders</span>
+          </li>
+          <li>
+            <LocalShipping className="icon" />
+            <span>Delivery</span>
+          </li>
+          <p className="title">USEFUL</p>
+          <li>
+            <InsertChart className="icon" />
+            <span>Stats</span>
+          </li>
+          <li>
+            <NotificationsNone className="icon" />
+            <span>Notifications</span>
+          </li>
+          <p className="title">SERVICE</p>
+          <li>
+            <SettingsSystemDaydreamOutlined className="icon" />
+            <span>System Health</span>
+          </li>
+          <li>
+            <PsychologyOutlined className="icon" />
+            <span>Logs</span>
+          </li>
+          <li>
+            <SettingsApplications className="icon" />
+            <span>Settings</span>
+          </li>
+          <p className="title">USER</p>
+          <li>
+            <AccountCircleOutlined className="icon" />
+            <span>Profile</span>
+          </li>
+          <li>
+            <ExitToApp className="icon" />
+            <span>Logout</span>
+          </li>
+        </ul>
+      </div>
+      <div className="bottom">
+        <div
+          className="colorOption"
+          // onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="colorOption"
+          // onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
   );

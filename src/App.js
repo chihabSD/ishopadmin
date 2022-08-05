@@ -1,26 +1,35 @@
-import React from 'react'
-import Home from './pages/Home'
+import React, { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Login from "./pages/Auth/Login";
+import List from "./pages/List";
+import Single from "./pages/Single";
+import New from "./pages/New";
 
 const App = () => {
   return (
-    <div><Home /></div>
-  )
-}
+    <Routes>
+      <Route path="/">
+        <Route element={<Home />} index />
+        <Route path="login" element={<Login />} />
 
-export default App
-// import SideBar from "./components/sidebar/index.js";
-// import TopBar from "./components/topBar.js";
-// import './app.css'
-// function App() {
-//   return (
-//     <div>
-//       <TopBar />
-//       <div className="container">
-//         <SideBar />
-//         <div className="others">Other pages</div>
-//       </div>
-//     </div>
-//   );
-// }
+        {/* Users */}
+        <Route path="users">
+          <Route index element={<List />} />
+          <Route path=":userId" element={<Single />} />
+          <Route path="new" element={<New />} />
+        </Route>
 
-// export default App;
+        {/* Products */}
+        <Route path="products">
+          <Route index element={<List />} />
+          <Route path=":userId" element={<Single />} />
+          <Route path="new" element={<New />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
+};
+
+export default App;
