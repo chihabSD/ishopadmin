@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.scss";
-import { Language, Search, DarkModeOutlined , FullscreenExitOutlined, NotificationsOutlined, ListOutlined, ChatBubbleOutlined} from "@mui/icons-material";
+import { Language, Search, DarkModeOutlined , FullscreenExitOutlined, NotificationsOutlined, ListOutlined, ChatBubbleOutlined, Brightness1Outlined} from "@mui/icons-material";
+import { DarkModeContext } from "../../contexts/darkModeContext";
 const Nabar = () => {
+  const {dark, toggleDarkMode} = useContext(DarkModeContext)
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -15,7 +17,9 @@ const Nabar = () => {
           English
           </div>
           <div className="item">
-            <DarkModeOutlined className="icon"/>
+            
+            <DarkModeOutlined className="icon" onClick={()=>toggleDarkMode()}/>
+        
           </div>
           <div className="item">
             <FullscreenExitOutlined className="icon"/>

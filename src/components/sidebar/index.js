@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.scss";
 import {
   LineStyle,
@@ -7,8 +7,10 @@ import {
   NotificationsNone,
   TrendingUp,
   PersonOutline,
+  DarkMode,
   StoreMallDirectory,
   Dashboard,
+  SettingsBrightnessOutlined,
   CreditCard,
   LocalShipping,
   SettingsApplications,
@@ -19,13 +21,15 @@ import {
   ExitToApp,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../contexts/darkModeContext";
 
 const SideBar = () => {
+  const { dark, toggleDarkMode } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-        <span className="logo">ISHOP-ADMIN</span>
+          <span className="logo">ISHOP-ADMIN</span>
         </Link>
       </div>
       <hr />
@@ -38,21 +42,19 @@ const SideBar = () => {
           </li>
           <p className="title">LISTS</p>
 
-        <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutline className="icon" />
+              <span>Users</span>
+            </li>
+          </Link>
 
-          <li>
-            <PersonOutline className="icon" />
-            <span>Users</span>
-          </li>
-        </Link>
-
-        <Link to="/products" style={{ textDecoration: "none" }}>
-
-          <li>
-            <StoreMallDirectory className="icon" />
-            <span>Products</span>
-          </li>
-        </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreMallDirectory className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
           <li>
             <CreditCard className="icon" />
             <span>Orders</span>
@@ -95,14 +97,17 @@ const SideBar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div
-          className="colorOption"
-          // onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          // onClick={() => dispatch({ type: "DARK" })}
-        ></div>
+        <ul>
+          <li onClick={() => toggleDarkMode()}>
+            {dark ? (
+              <SettingsBrightnessOutlined className="icon" />
+            ) : (
+              <DarkMode className="icon" />
+            )}
+
+            <span>{dark ? "Light Mode" : "Dark Mode "}</span>
+          </li>
+        </ul>
       </div>
     </div>
   );
