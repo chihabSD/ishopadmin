@@ -1,9 +1,43 @@
-import React from 'react'
-import './style.scss'
+import React from "react";
+import "./style.scss";
+import { Language, Search, DarkModeOutlined , FullscreenExitOutlined, NotificationsOutlined, ListOutlined, ChatBubbleOutlined} from "@mui/icons-material";
 const Nabar = () => {
   return (
-    <div>Nabar</div>
-  )
-}
+    <div className="navbar">
+      <div className="wrapper">
+        <div className="search">
+          <input type="text" placeholder="Search..." />
+          <Search />
+        </div>
+        <div className="items">
+          <div className="item">
+            <Language className="icon"/>
+          English
+          </div>
+          <div className="item">
+            <DarkModeOutlined className="icon"/>
+          </div>
+          <div className="item">
+            <FullscreenExitOutlined className="icon"/>
+          </div>
+          <div className="item">
+            <NotificationsOutlined className="icon"/>
+            <div className="counter">1</div>
+          </div>
+          <div className="item">
+            <ChatBubbleOutlined className="icon"/>
+            <div className="counter">2</div>
+          </div>
+          <div className="item">
+            <ListOutlined className="icon"/>
+          </div>
+          <div className="item">
+          <img src="https://images.pexels.com/photos/296282/pexels-photo-296282.jpeg?cs=srgb&dl=pexels-lukas-296282.jpg&fm=jpg" alt="" className="avatar"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Nabar
+export default Nabar;
