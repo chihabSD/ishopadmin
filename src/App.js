@@ -7,9 +7,11 @@ import List from "./pages/List";
 import Single from "./pages/Single";
 import New from "./pages/New";
 import { userInputs, productInputs } from "./formSource";
-
+import './style/dark.scss'
 const App = () => {
   return (
+    <div className="app dark">
+
     <Routes>
       <Route path="/">
         <Route element={<Home />} index />
@@ -30,6 +32,7 @@ const App = () => {
         </Route>
       </Route>
     </Routes>
+    </div>
   );
 };
 
