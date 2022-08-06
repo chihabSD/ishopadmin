@@ -18,15 +18,15 @@ import {
   PsychologyOutlined,
   ExitToApp,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        {/* <Link to="/" style={{ textDecoration: "none" }}> */}
-
+        <Link to="/" style={{ textDecoration: "none" }}>
         <span className="logo">ISHOP-ADMIN</span>
-        {/* </Link> */}
+        </Link>
       </div>
       <hr />
       <div className="center">
@@ -38,14 +38,21 @@ const SideBar = () => {
           </li>
           <p className="title">LISTS</p>
 
+        <Link to="/users" style={{ textDecoration: "none" }}>
+
           <li>
             <PersonOutline className="icon" />
             <span>Users</span>
           </li>
+        </Link>
+
+        <Link to="/products" style={{ textDecoration: "none" }}>
+
           <li>
             <StoreMallDirectory className="icon" />
             <span>Products</span>
           </li>
+        </Link>
           <li>
             <CreditCard className="icon" />
             <span>Orders</span>
