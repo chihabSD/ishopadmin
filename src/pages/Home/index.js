@@ -3,6 +3,7 @@ import Chart from "../../components/chart";
 import Featured from "../../components/featured";
 import Nabar from "../../components/navbar";
 import SideBar from "../../components/sidebar";
+import TableUI from "../../components/table";
 import Widget from "../../components/widgets";
 import "./home.scss";
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
         {/* LISTS  */}
 <div className="listContainer">
   <div className="listTitle"> Latest Transactions</div>
+  <TableUI />
 </div>
 
       </div>

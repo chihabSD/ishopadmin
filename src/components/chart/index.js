@@ -31,14 +31,13 @@ const data = [
   { name: "June", Total: 1700 },
 ];
 
-const Chart = () => {
+const Chart = ({title, aspect}) => {
   const demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
   return (
     <div className="chart">
-      <div className="title">Last 6 Months (Revenue ) </div>
-      <ResponsiveContainer width="100%" aspect={2/1}>
-
-      <AreaChart
+      <div className="title">{title ? title :'Default revenue'}</div>
+      <ResponsiveContainer width="100%" aspect={aspect ? aspect : 2/1}>
+        <AreaChart
           width={730}
           height={250}
           data={data}
