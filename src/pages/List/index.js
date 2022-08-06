@@ -1,18 +1,18 @@
-import React from 'react'
-import SideBar from '../../components/sidebar'
-import Navbar from '../../components/navbar'
-import './style.scss'
+import React from "react";
+import SideBar from "../../components/sidebar";
+import Navbar from "../../components/navbar";
+import "./style.scss";
+import DataTable from "../../components/datatable";
 const List = () => {
   return (
-    <div className='list'>
+    <div className="list">
       <SideBar />
-      <div className='listContainer'>
+      <div className="listContainer">
         <Navbar />
-        databable
+         <DataTable />
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
